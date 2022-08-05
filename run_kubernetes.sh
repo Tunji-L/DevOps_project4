@@ -5,7 +5,7 @@
 # Step 1:
 # This is your Docker ID/path
 # dockerpath=<>
-dockerpath="oyetunji001/flaskapp:v1.0"
+dockerpath=oyetunji001/flaskapp:v1.0
 
 # Step 2
 # Run the Docker Hub container with kubernetes
@@ -17,4 +17,4 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward flaskapp 8000:80
+kubectl port-forward flaskapp --address 0.0.0.0 8000:80

@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath=oyetunji001/flaskapp:v1.0
+dockerpath="oyetunji001/flaskapp:v1.0"
 
 # Step 2:  
 # Authenticate & tag
