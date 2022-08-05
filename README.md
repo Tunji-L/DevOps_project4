@@ -36,15 +36,43 @@ source .devops/bin/activate
 ```
 * Run `make install` to install the necessary dependencies
 
-### Running `app.py`
-
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
-
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+### Setup and Configure Kubernetes locally
+
+Running kubernetes locally requires the Kubernetes package, `minikube` that operates in a virtual machine (aka a hypervisor). 
+Here is how I installed minikube:
+
+###### For mac
+
+* Step 1: run `brew install --cask virtualbox`
+* Step 2: run `brew install --cask minikube`
+
+###### For windows
+
+* Step 1: download window host virtualbox [here](https://www.virtualbox.org/wiki/Downloads)
+* Step 2: follow the minikube installation [here](https://minikube.sigs.k8s.io/docs/start/)
+
+###### Creating flask app in container
+
+run: `./run_docker.sh`
+
+###### Run kubernetes cluster locally
+
+* Start minikube `minikube start`
+* Check running cluster `kubectl config view`
+
+###### Run flask app via kubectl
+
+run: `./run_kubernetes.sh`
+
+### Running `app.py`
+
+1. Standalone:  `python app.py`
+2. Run in Docker:  `./run_docker.sh`
+3. Run in Kubernetes:  `./run_kubernetes.sh`
